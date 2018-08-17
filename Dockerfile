@@ -1,10 +1,10 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:8-jdk
 
 WORKDIR /tmp
 
 COPY . .
 
-RUN ./mvnw package -Dmaven.test.skip=true 
+RUN ./mvnw package 
 RUN cp target/celsius2fahrenheit*.jar /app.jar
 
 EXPOSE 8080
