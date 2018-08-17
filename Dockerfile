@@ -4,7 +4,7 @@ WORKDIR /tmp
 
 COPY . .
 
-RUN mvn package 
+RUN ./mvnw package 
 RUN cp target/celsius2fahrenheit*.jar /app.jar
 
 EXPOSE 8080
