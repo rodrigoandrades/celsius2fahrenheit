@@ -1,5 +1,8 @@
 package com.example.celsius2fahrenheit;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class TemperatureConverter {
     public Double cel2far(Double celsius) {
     	return (celsius * 9 / 5.0) + 32;
