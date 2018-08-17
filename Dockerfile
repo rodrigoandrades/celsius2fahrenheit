@@ -4,7 +4,7 @@ WORKDIR /tmp
 
 COPY . .
 
-RUN ./mvnw package 
+RUN ./mvnw package -Dmaven.test.skip=true 
 RUN cp target/celsius2fahrenheit*.jar /app.jar
 
 EXPOSE 8080
