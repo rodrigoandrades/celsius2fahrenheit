@@ -1,0 +1,13 @@
+!SESSION 2018-08-16 20:47:21.044 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.mule.tooling.ui 2 0 2018-08-16 20:51:47.943
+!MESSAGE Could not reset the Mule perspective
+
+!ENTRY org.mule.tooling.core 1 0 2018-08-16 20:52:04.567
+!MESSAGE Generating unique Studio Id = STUDIO-fb029475-b889-4a5c-84a8-b8213a8f9c05-15344635245613045
