@@ -31,19 +31,19 @@ http://localhost/api/cel2fah?celsius=43
 ```
 
 ## Passo 3 - Operar a aplicação publicada no Azure como um conteiner Docker
+```
+# go to https://www.katacoda.com/courses/azure/deploying-container-instances
+
+# clone github project
+git clone https://github.com/rodrigoandrades/celsius2fahrenheit.git
+
+# build image
+cd celsius2fahrenheit/
+docker build -t cel2fah .
+```
 
 
 ## Passo 4 - Operar a aplicação como um serviço Docker Swarm
 
 
 ## Passo 5 - Resumo
-
-
-
-
-
-## build docker image
-docker build -t app .
-
-## run docker
-docker run -d -p 8080:8080 app
