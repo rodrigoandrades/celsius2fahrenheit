@@ -32,18 +32,18 @@ http://localhost/api/cel2fah?celsius=43
 
 ## Passo 3 - Operar a aplicação publicada no Azure como um conteiner Docker
 ```
-# criar uma conta no docker hub: https://hub.docker.com
+# criar uma conta no docker hub: https://hub.docker.com (já criado, não é necessário executar)
 
-# contruir imagem docker
+# contruir imagem docker (já criado, não é necessário executar)
 docker build -t cel2fah .
 
-# logar no docker hub
+# logar no docker hub (já criado, não é necessário executar)
 docker login
 
-# versionar imagem docker
+# versionar imagem docker (já criado, não é necessário executar)
 docker tag cel2fah pucarquiteranuvem/cel2fah
 
-# enviar imagem docker
+# enviar imagem docker (já criado, não é necessário executar)
 docker push pucarquiteranuvem/cel2fah
 
 # acessar: https://www.katacoda.com/courses/azure/deploying-container-instances
