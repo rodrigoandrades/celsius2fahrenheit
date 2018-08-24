@@ -65,6 +65,24 @@ http://<IP_GERADO>/api/cel2fah?celsius=43
 
 
 ## Passo 4 - Operar a aplicação como um serviço Docker Swarm
+```
+# acessar : https://www.katacoda.com/courses/docker-orchestration/playground
+# executar os passos:
+# Initialize
+# Join
+# Create Overlay Metwork
+
+# executar comando:
+docker service create --name cel2fah --network skynet --replicas 2 -p 80:80 pucarquiteranuvem/cel2fah
+
+
+# executar comando abaixo nos dois servidores pra conferir as instâncias que estão rodando
+docker ps
+
+# clicar no símbolo de + e criar uma nova aba do web preview na porta 80
+# neste momento ficou:
+https://2886795318-80-frugo01.environments.katacoda.com/api/cel2fah?celsius=43
+```
 
 
 ## Passo 5 - Resumo
