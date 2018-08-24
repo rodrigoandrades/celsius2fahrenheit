@@ -11,35 +11,56 @@ Arquivo Dockerfile
 
 ## Passo 2 - Operar a aplicação com balanceamento de carga em 3 instâncias distintas
 ```
-# build image
+# contruir imagem docker
 docker build -t cel2fah .
 
-# launch nginx-proxy
+# instânciar nginx-proxy
 docker run -d -p 80:80 -e DEFAULT_HOST=proxy.example -v /var/run/docker.sock:/tmp/docker.sock:ro --name nginx jwilder/nginx-proxy
 
-# launch instance 1
+# instânciar processo 1
 docker run -d -p 8080 -e VIRTUAL_HOST=proxy.example cel2fah
 
-# launch instance 2
+# instânciar processo 2
 docker run -d -p 8080 -e VIRTUAL_HOST=proxy.example cel2fah
 
-# launch instance 3
+# instânciar processo 3
 docker run -d -p 8080 -e VIRTUAL_HOST=proxy.example cel2fah
 
-# test
+# testar
 http://localhost/api/cel2fah?celsius=43
 ```
 
 ## Passo 3 - Operar a aplicação publicada no Azure como um conteiner Docker
 ```
-# go to https://www.katacoda.com/courses/azure/deploying-container-instances
+# criar uma conta no docker hub: https://hub.docker.com
 
-# clone github project
-git clone https://github.com/rodrigoandrades/celsius2fahrenheit.git
-
-# build image
-cd celsius2fahrenheit/
+# contruir imagem docker
 docker build -t cel2fah .
+
+# logar no docker hub
+docker login
+
+# versionar imagem docker
+docker tag cel2fah pucarquiteranuvem/cel2fah
+
+# enviar imagem docker
+docker push pucarquiteranuvem/cel2fah
+
+# acessar: https://www.katacoda.com/courses/azure/deploying-container-instances
+
+# efetuar login na azure
+az login -u $username -p $password
+
+# executar o comando:
+az container create \
+-g $resource \
+--name cel2fah \
+--image pucarquiteranuvem/cel2fah \
+--ip-address public
+
+# testar
+http://<IP_GERADO>/api/cel2fah?celsius=43
+
 ```
 
 
